@@ -1,0 +1,102 @@
+html {
+    scroll-behavior: smooth;
+    background-color: rgb(24, 86, 231);
+}
+
+@keyframes pageTransition {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+body {
+    font-family : 'Times New Roman', Times, serif;
+    margin :30px;
+    padding: 20px;
+    background-color: lightblue;
+    font-size: 20px;
+    min-height: 90vh;
+    animation: pageTransition 0.5s ease-out;
+    line-height: 1.6;
+}
+
+nav {
+    background: linear-gradient(to right, #004080, #0066cc);
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    flex: 1;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a.active {
+    background-color: rgba(255, 255, 255, 0.158);
+    border-bottom: 3px solid #020f57;
+}
+
+nav a:hover {
+    background-color: rgba(255,255,255,0.2);
+    color: #fff;
+}
+
+/* Mobile Responsive Styles for iPhone */
+@media screen and (max-width: 768px) {
+    body {
+        margin: 10px;
+        padding: 10px;
+        font-size: 16px;
+    }
+    
+    h1 {
+        font-size: 22px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav li {
+        width: 100%;
+    }
+    
+    nav a {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+    
+    /* Fix image sizing on mobile */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Fix flex containers on mobile */
+    div[style*="display: flex"] {
+        flex-direction: column !important;
+    }
+    
+    ul {
+        font-size: 16px !important;
+        padding-left: 20px;
+    }
+}
